@@ -31,6 +31,11 @@ ip=$(az vm show \
 --query [publicIps] \
 --output tsv) 
 
-ssh azureuser@$ip
+
+ssh azureuser@$ip << EOF
+   echo -e "You just ssh into the vm \n Welcome !! "
+   apt-get update 
+   apt-get install apache2 -y
+EOF 
 
 
