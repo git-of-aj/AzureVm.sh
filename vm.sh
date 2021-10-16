@@ -7,6 +7,8 @@ alias vm.sh='sh vm.sh'
 
 echo -n " $(tput setaf 44) Enter your choice for the name of resource group : $(tput sgr 0) "; read rg_name
 
+echo -n " $(tput setaf 11) Name of VM :->  $(tput sgr 0)"; read vm_name
+
 
 #create a resource group 
 az group create -n $rg_name -l centralindia -o table
@@ -14,8 +16,6 @@ az group create -n $rg_name -l centralindia -o table
 
 #create a vm 
 echo " "
-
-echo -n " $(tput setaf 11) Name of VM :->  $(tput sgr 0)"; read vm_name
 
 az vm create \
 -g $rg_name -l centralus -n $vm_name \
@@ -31,11 +31,15 @@ ip=$(az vm show \
 --query [publicIps] \
 --output tsv) 
 
+# delete the vm 
+#az vm delete -g $rg_name -n $vm_name --yes
+
 
 ssh azureuser@$ip << EOF
-   echo -e "You just ssh into the vm \n Welcome !! "
+   echo -e "You just ssh into the vm $vm_name \n Welcome !! "
    apt-get update 
    apt-get install apache2 -y
 EOF 
+
 
 
