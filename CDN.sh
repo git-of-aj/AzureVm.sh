@@ -8,5 +8,5 @@ az group create --name cdn-tutorial --location westus && az config set defaults.
 #input webapp name from the user
 #it will appear in the URL OF WEBAPP 
 #
-echo -e $(tput setaf 1 Enter your Webapp Name :  ) ; read appName
+echo -e $(tput setaf 1) Enter your Webapp Name :  $(tput sgr 0) ) ; read appName
 az webapp up --name $appName --logs --launch-browser
