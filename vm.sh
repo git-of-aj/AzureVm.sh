@@ -18,14 +18,14 @@ az group create -n $rg_name -l centralindia -o table
 echo " "
 
 az vm create \
--g $rg_name -l centralus -n $vm_name \
+-g $rg_name -l southeastasia -n $vm_name \
 --image UbuntuLTS \
 --admin-username azureuser \
 --generate-ssh-keys \
 --output table
 
 # download extension
-az vm extension set --resource-group myResourceGroup1 --vm-name myVM1 --name NetworkWatcherAgentLinux --publisher Microsoft.Azure.NetworkWatcher --version 1.4
+az vm extension set --resource-group $rg_name --vm-name $vm_name --name NetworkWatcherAgentLinux --publisher Microsoft.Azure.NetworkWatcher --version 1.4
 
 
 ip=$(az vm show \
