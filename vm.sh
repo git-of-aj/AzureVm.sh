@@ -2,7 +2,7 @@
 
 set -e
 
-alias vm.sh='sh vm.sh'
+alias vm.sh='bash vm.sh'
 #take the input from the user for resource group & vm  name 
 
 echo -n " $(tput setaf 44) Enter your choice for the name of resource group : $(tput sgr 0) "; read rg_name
@@ -23,6 +23,9 @@ az vm create \
 --admin-username azureuser \
 --generate-ssh-keys \
 --output table
+
+# download extension
+az vm extension set --resource-group myResourceGroup1 --vm-name myVM1 --name NetworkWatcherAgentLinux --publisher Microsoft.Azure.NetworkWatcher --version 1.4
 
 
 ip=$(az vm show \
