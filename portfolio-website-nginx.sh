@@ -6,6 +6,6 @@ sudo apt install nginx - y
 
 sudo systemctl enable nginx.service
 
-git clone 
+git clone https://github.com/Ananyojha/ananyojha.github.io.git
 
-sudo cp -r ./AnanayOjha.github.io/* /var/www/html/
+sudo cp -r ./ananyojha.github.io/* /var/www/html/
