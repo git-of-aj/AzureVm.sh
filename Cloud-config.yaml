@@ -3,4 +3,7 @@ package_upgrade: true
 packages:
   - nginx
   - git
-# include
+runcmd:
+- systemctl enable nginx.service
+- git clone https://github.com/Ananyojha/ananyojha.github.io.git
+- cp -r ./ananyojha.github.io/* /var/www/html/
