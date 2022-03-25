@@ -33,6 +33,12 @@ az vm create -n MyVm -g MyResourceGroup --image centos --count 3 \
 
 
 ```
+When creating using GitHub just -- 
+#include - 
+raw.giyhubusercontenet
+
+⬆️🆙In user group section
+
 
 ## CLOUD INIT NODE APP 
 
