@@ -33,3 +33,9 @@ az vm create -n MyVm -g MyResourceGroup --image centos --count 3 \
 
 
 ```
+
+## CLOUD INIT NODE APP 
+
+```
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-automate-vm-deployment
+```
