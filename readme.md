@@ -19,3 +19,17 @@ in appropriate places.
 eg: ` -l westindia `
 
 ### Thank You hope you like it ! 
+
+```sh
+az vm create -n MyVm -g MyResourceGroup --image UbuntuLTS
+
+# create multiple vm with names vm 0, vm1 etc
+az vm create -n MyVm -g MyResourceGroup --image centos --count 3 \
+--subnet-name \
+--vnet-name \
+--size \ 
+--public-ip-address \  # incase of private IP this value will be ""
+--public-ip-sku \ 
+
+
+```
