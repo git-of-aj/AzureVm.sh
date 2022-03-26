@@ -1,3 +1,8 @@
+```
+https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/tutorial-create-and-manage-cli
+```
+
+
 # In this repo we create a `bash` script.
 
 In this `bash` script we ask the user for the name for **Resource Group** and **VM**
