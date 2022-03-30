@@ -4,6 +4,20 @@ packages:
   - nginx
   - git
 runcmd:
+  # install Node.js
+  - 'curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -'
+  - 'sudo apt-get install -y nodejs'
+  # clone GitHub Repo into myapp directory
+  - 'cd /home/azureuser'
+  - git clone "https://github.com/Azure-Samples/js-e2e-vm" myapp
+  # Start app
+  - 'cd myapp && npm install && npm start'
+  # restart NGINX
+  - systemctl restart nginx
+
+
+
+runcmd:
 - systemctl enable nginx.service
 - git clone https://github.com/Ananyojha/ananyojha.github.io.git
 - cp -r ./ananyojha.github.io/* /var/www/html/
