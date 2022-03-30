@@ -19,5 +19,6 @@ runcmd:
 
 runcmd:
 - systemctl enable nginx.service
-- git clone https://github.com/Ananyojha/ananyojha.github.io.git
-- cp -r ./ananyojha.github.io/* /var/www/html/
+- git clone "https://github.com/Ananyojha/ananyojha.github.io.git" 
+- 'cp -r ./ananyojha.github.io/* /var/www/html/'
+- systemctl restart nginx
