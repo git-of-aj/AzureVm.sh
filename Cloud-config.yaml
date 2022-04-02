@@ -15,7 +15,7 @@ runcmd:
   # restart NGINX
   - systemctl restart nginx
 
-
+# az vmss create -g 2-april-22 -n MyVmss --image debian --custom-data init.yml
 
 runcmd:
 - systemctl enable nginx.service
