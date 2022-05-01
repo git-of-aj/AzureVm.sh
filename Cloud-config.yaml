@@ -26,6 +26,8 @@ runcmd:
 #ssl
 
 runcmd:
+  - export DOMAIN=ananayojha.rocks
+  - SUBDOMAIN=demo
   - add-apt-repository ppa:certbot/certbot -y
   - apt-get update
   - apt install python-certbot-nginx -y
