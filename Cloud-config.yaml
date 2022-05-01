@@ -27,7 +27,8 @@ runcmd:
 
 runcmd:
   - export DOMAIN=ananayojha.rocks
-  - SUBDOMAIN=demo
+  - export SUBDOMAIN=demo
+  - export EMAIL=mail@gmail.com
   - add-apt-repository ppa:certbot/certbot -y
   - apt-get update
   - apt install python-certbot-nginx -y
