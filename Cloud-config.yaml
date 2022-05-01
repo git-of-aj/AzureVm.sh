@@ -22,3 +22,20 @@ runcmd:
 - git clone "https://github.com/Ananyojha/ananyojha.github.io.git" 
 - 'cp -r ./ananyojha.github.io/* /var/www/html/'
 - systemctl restart nginx
+
+#ssl
+
+runcmd:
+  - add-apt-repository ppa:certbot/certbot -y
+  - apt-get update
+  - apt install python-certbot-nginx -y
+  # add domain name to nginx config, restart it
+  - sed -i 's/server_name _;/server_name '$SUBDOMAIN"."$DOMAIN';/' /etc/nginx/sites-available/default
+  - systemctl restart nginx
+  - certbot --nginx -n -d $DROPLET_NAME"."$DOMAIN --email $EMAIL --agree-tos --redirect --hsts
+  - systemctl reboot
+# add renewal cron
+write_files:
+  - owner: root:root
+    path: /etc/cron.d/letsencrypt_renew
+    content: "15 3 * * * /usr/bin/certbot renew --quiet"
