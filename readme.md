@@ -2,6 +2,8 @@
 https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/tutorial-create-and-manage-cli
 ```
 
+[CLOUD-INIT BASICS BY DIGITAL OCEAN](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting)
+
 
 # In this repo we create a `bash` script.
 
